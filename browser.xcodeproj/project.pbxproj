@@ -24,6 +24,9 @@
 		450C13DA1EADF10E00EDD54E /* newsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 450C13D81EADF10E00EDD54E /* newsTableViewCell.xib */; };
 		455CFF941EAF49800021AFB4 /* GDpageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 455CFF931EAF49800021AFB4 /* GDpageViewController.m */; };
 		4582F8451EB059E40079CBA6 /* GDpageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4582F8441EB059E40079CBA6 /* GDpageViewController.xib */; };
+		4582F84F1EB096170079CBA6 /* exploreView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4582F84E1EB096170079CBA6 /* exploreView.xib */; };
+		4582F8521EB096240079CBA6 /* exploreView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4582F8511EB096240079CBA6 /* exploreView.m */; };
+		4582F85B1EB0AE690079CBA6 /* baseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4582F85A1EB0AE690079CBA6 /* baseView.m */; };
 		45D1E7D71EA9DD3300D3F2B7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 45D1E7D61EA9DD3300D3F2B7 /* main.m */; };
 		45D1E7DA1EA9DD3300D3F2B7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 45D1E7D91EA9DD3300D3F2B7 /* AppDelegate.m */; };
 		45D1E7E01EA9DD3300D3F2B7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 45D1E7DE1EA9DD3300D3F2B7 /* Main.storyboard */; };
@@ -61,6 +64,11 @@
 		455CFF921EAF49800021AFB4 /* GDpageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDpageViewController.h; sourceTree = "<group>"; };
 		455CFF931EAF49800021AFB4 /* GDpageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GDpageViewController.m; sourceTree = "<group>"; };
 		4582F8441EB059E40079CBA6 /* GDpageViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GDpageViewController.xib; sourceTree = "<group>"; };
+		4582F84E1EB096170079CBA6 /* exploreView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = exploreView.xib; sourceTree = "<group>"; };
+		4582F8501EB096240079CBA6 /* exploreView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = exploreView.h; sourceTree = "<group>"; };
+		4582F8511EB096240079CBA6 /* exploreView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = exploreView.m; sourceTree = "<group>"; };
+		4582F8591EB0AE690079CBA6 /* baseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = baseView.h; sourceTree = "<group>"; };
+		4582F85A1EB0AE690079CBA6 /* baseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = baseView.m; sourceTree = "<group>"; };
 		45D1E7D21EA9DD3300D3F2B7 /* browser.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = browser.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		45D1E7D61EA9DD3300D3F2B7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		45D1E7D81EA9DD3300D3F2B7 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -160,6 +168,11 @@
 				450C13D61EADF10E00EDD54E /* newsTableViewCell.h */,
 				450C13D71EADF10E00EDD54E /* newsTableViewCell.m */,
 				450C13D81EADF10E00EDD54E /* newsTableViewCell.xib */,
+				4582F84E1EB096170079CBA6 /* exploreView.xib */,
+				4582F8501EB096240079CBA6 /* exploreView.h */,
+				4582F8511EB096240079CBA6 /* exploreView.m */,
+				4582F8591EB0AE690079CBA6 /* baseView.h */,
+				4582F85A1EB0AE690079CBA6 /* baseView.m */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -274,6 +287,7 @@
 				4582F8451EB059E40079CBA6 /* GDpageViewController.xib in Resources */,
 				450C13CA1EADADAE00EDD54E /* 扩展.png in Resources */,
 				450C13C81EADADAE00EDD54E /* 下一步.png in Resources */,
+				4582F84F1EB096170079CBA6 /* exploreView.xib in Resources */,
 				45D1E7E51EA9DD3300D3F2B7 /* LaunchScreen.storyboard in Resources */,
 				450C13CB1EADADAE00EDD54E /* 返回.png in Resources */,
 				45D1E7E21EA9DD3300D3F2B7 /* Assets.xcassets in Resources */,
@@ -344,7 +358,9 @@
 				450C13D41EADB47B00EDD54E /* UIImage+scale.m in Sources */,
 				450C13CE1EADB03500EDD54E /* ViewController.m in Sources */,
 				450C13B71EAD9DC900EDD54E /* NewsBean.m in Sources */,
+				4582F85B1EB0AE690079CBA6 /* baseView.m in Sources */,
 				45D1E7D71EA9DD3300D3F2B7 /* main.m in Sources */,
+				4582F8521EB096240079CBA6 /* exploreView.m in Sources */,
 				450C13B01EAD939000EDD54E /* baseBean.m in Sources */,
 				450C13AC1EAD935A00EDD54E /* mainViewController.m in Sources */,
 				455CFF941EAF49800021AFB4 /* GDpageViewController.m in Sources */,

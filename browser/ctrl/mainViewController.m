@@ -20,9 +20,6 @@
 @property (weak, nonatomic) IBOutlet UIView *mainView;
 @property (weak, nonatomic) IBOutlet UIView *topView;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
-@property (weak, nonatomic) IBOutlet UIView *botomView;
-@property (weak, nonatomic) IBOutlet UISearchBar *search;
-@property (weak, nonatomic) IBOutlet UIButton *currentIndexBtn;
 
 @end
 
@@ -32,7 +29,7 @@
 - (void)viewDidLoad{
     [super viewDidLoad];
     self.automaticallyAdjustsScrollViewInsets = NO;
-    _currentIndexBtn.titleLabel.text = @"1";
+   // _currentIndexBtn.titleLabel.text = @"1";
     self.tableView.delegate=self;
     self.tableView.dataSource = self;
     for (int i = 0; i<10; i++) {
@@ -46,9 +43,9 @@
     
     NTButton * customButton = [NTButton buttonWithType:UIButtonTypeCustom];
     customButton.tag = index;
-    CGFloat buttonW = _topView.frame.size.width / 5;
-    CGFloat buttonH = _topView.frame.size.height/2;
-    customButton.frame = CGRectMake(buttonW * (index%5),68.5*(index/5), buttonW, buttonH);
+    CGFloat buttonW = [UIScreen mainScreen].bounds.size.width / 5;
+    CGFloat buttonH = self.topView.frame.size.height/2;
+    customButton.frame = CGRectMake(buttonW * (index%5),buttonH*(index/5), buttonW, buttonH);
     [customButton setImage:[[UIImage imageNamed:normal] scaleToSize:CGSizeMake(22, 22)] forState:UIControlStateNormal];
     [customButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     customButton.titleLabel.font = [UIFont systemFontOfSize:20];
@@ -64,17 +61,11 @@
 //    NSInteger tag = sender.tag;
     ViewController* webCtrl = [[ViewController alloc]init];
      webCtrl.urlStr = @"https://www.baidu.com/";
-    NSInteger index = self.currentIndexBtn.titleLabel.text.integerValue;
-    self.currentIndexBtn.titleLabel.text = [NSString stringWithFormat:@"%ld",index+1];
+  //  NSInteger index = self.currentIndexBtn.titleLabel.text.integerValue;
+ //   self.currentIndexBtn.titleLabel.text = [NSString stringWithFormat:@"%ld",index+1];
     [self.delegate pushToViewController:webCtrl];
 }
 
--(void)goHomeView{
-//    [self.mainView addSubview:self.tableView];
-//    [self.mainView addSubview:self.topView];
-//    [self.mainView addSubview:self.search];
-//    [self fetchDataWithskip:0 andWithlimit:10];
-}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -99,22 +90,8 @@
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     return 108;
 }
-- (IBAction)backward:(id)sender {
-    NSInteger index = self.currentIndexBtn.titleLabel.text.integerValue;
-    if (index-2<=0) {
-        if (index-2==0) {
-                [self goHomeView];
-        }
-        return;
-    }
-    //返回主页时清除request缓存
-}
-- (IBAction)forward:(id)sender {
-    
-}
-- (IBAction)goHome:(id)sender {
-    
-}
+
+
 -(void)reloadTableView{
     [self.tableView reloadData];
 }
@@ -122,8 +99,8 @@
     NewsBean*bean  = self.beanArr[indexPath.row];
     ViewController* webCtrl = [[ViewController alloc]init];
     webCtrl.urlStr = bean.detail_link;
-    NSInteger index = self.currentIndexBtn.titleLabel.text.integerValue;
-    self.currentIndexBtn.titleLabel.text = [NSString stringWithFormat:@"%ld",index+1];
+ //   NSInteger index = self.currentIndexBtn.titleLabel.text.integerValue;
+//    self.currentIndexBtn.titleLabel.text = [NSString stringWithFormat:@"%ld",index+1];
     [self.delegate pushToViewController:webCtrl];
 }
 
